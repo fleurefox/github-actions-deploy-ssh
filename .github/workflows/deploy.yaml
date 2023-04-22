@@ -18,7 +18,7 @@ jobs:
     steps:
     - id: deploy
       name: Deploy
-      uses: fleurefox/github-actions-deploy-ssh
+      uses: fleurefox/github-actions-deploy-ssh@v0.4.1
       with:
         aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID_DEPLOY_SSH_INSTANCE}}
         aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_DEPLOY_SSH_INSTANCE}}
