@@ -22,7 +22,7 @@ jobs:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           
       - name: Connect to remote server
-        run: ssh username@remote-server-ip
+        run: ssh ec2-user@52.203.187.238
         
       - name: Deploy code
         run: |
