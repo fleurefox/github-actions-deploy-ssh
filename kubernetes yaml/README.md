@@ -14,11 +14,15 @@ Menunjukkan bahwa service akan di-expose melalui IP internal cluster.
 
 #Command
 Pastikan dependencies dan kubectl sudah terinstall terlebih dahulu
+
 `kubectl apply -f nodejs-deployment.yaml`
+
 `kubectl apply -f nodejs-service.yaml`
 
 cek status dengan
+
 `kubectl get deployments`
+
 `kubectl get services`
 
 
