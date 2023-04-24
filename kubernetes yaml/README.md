@@ -13,7 +13,7 @@ Adalah spesifikasi untuk deployment, termasuk jumlah replika, selector, dan temp
 ### 4. Type (hanya ada pada service)
 Menunjukkan bahwa service akan di-expose melalui IP internal cluster.
 
-#Command
+## Command
 Pastikan dependencies dan kubectl sudah terinstall terlebih dahulu
 
 `kubectl apply -f nodejs-deployment.yaml`
