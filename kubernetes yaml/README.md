@@ -8,7 +8,8 @@ Menunjukkan versi dan jenis file
 Berisi informasi metadata untuk objek service, seperti nama.
 ### 3. spec
 Adalah spesifikasi untuk deployment, termasuk jumlah replika, selector, dan template.
-`port: 3000' merupakan port engine yang digunakan nodejs
+
+`port: 3000` merupakan port engine yang digunakan nodejs
 ### 4. Type (hanya ada pada service)
 Menunjukkan bahwa service akan di-expose melalui IP internal cluster.
 
