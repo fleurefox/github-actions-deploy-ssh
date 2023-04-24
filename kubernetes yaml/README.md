@@ -6,7 +6,7 @@ Dalam skenario file ini docker image sudah dibuild dan dipush sehingga menyisaka
 Menunjukkan versi dan jenis file
 ### 2. Metadata
 Berisi informasi metadata untuk objek service, seperti nama.
-### 3. spec
+### 3. Spec
 Adalah spesifikasi untuk deployment, termasuk jumlah replika, selector, dan template.
 
 `port: 3000` merupakan port engine yang digunakan nodejs
