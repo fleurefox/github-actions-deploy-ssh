@@ -6,17 +6,17 @@ docker-compose build
 
 # Push Docker image to ECR
 $(aws ecr get-login --no-include-email)
-docker tag my-app:latest <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-app:latest
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-app:latest
+docker tag deploy-ssh 698773564316.dkr.ecr.us-east-1.amazonaws.com/deploy-ssh
+docker push 698773564316.dkr.ecr.us-east-1.amazonaws.com/deploy-ssh
 
 # SSH into EC2 instance and deploy Docker container
-ssh -i <AWS_KEY_PAIR>.pem ec2-user@<EC2_INSTANCE_IP> <<EOF
+ssh -i "tech-test.pem" ec2-user@52.203.187.238 <<EOF
 sudo yum update -y
 sudo amazon-linux-extras install docker
 sudo service docker start
 sudo usermod -aG docker ec2-user
 sudo docker stop my-app || true
 sudo docker rm my-app || true
-sudo docker pull <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-app:latest
-sudo docker run -d --name my-app -p 3000:3000 <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-app:latest 
+sudo docker pull 698773564316.dkr.ecr.us-east-1.amazonaws.com/deploy-ssh
+sudo docker run -d --name deploy-ssh -p 3000:3000 698773564316.dkr.ecr.us-east-1.amazonaws.com/deploy-ssh
 EOF
